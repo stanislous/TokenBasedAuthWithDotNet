@@ -1,0 +1,6 @@
+@TokenBasedAuthWithDotNet_HostAddress = http://localhost:5222
+
+GET {{TokenBasedAuthWithDotNet_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
