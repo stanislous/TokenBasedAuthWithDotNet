@@ -18,7 +18,7 @@ public class TokenController : ControllerBase
     [HttpPost("Authenticate")]
     public IActionResult Authenticate([FromBody] UserCredential userCredential)
     {
-        var token = _jwtTokenManager.Authenticate(userCredential.UserName, userCredential.Password);
+        var token = _jwtTokenManager.Authenticate(userCredential.Email, userCredential.Password);
         if (string.IsNullOrEmpty(token))
             return Unauthorized();
         return Ok(token);
