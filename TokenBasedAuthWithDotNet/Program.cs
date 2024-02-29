@@ -20,8 +20,9 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-//builder.Services.AddSingleton<IDbProvider>(_ => new DbProvider(config.GetValue<string>("AppSettings:ConnectionStrings")!));
+builder.Services.AddSingleton<IDbProvider>(_ => new DbProvider(config.GetValue<string>("ConnectionStrings:DefaultConnection")!));
 builder.Services.AddSingleton(config.GetValue<string>("JwtConfig:Key"));
+builder.Services.AddSingleton(config.GetValue<string>("RedirectUrls:PasswordReset"));
 
 builder.Services.AddControllers();
 builder.Services.AddAuthentication(option =>

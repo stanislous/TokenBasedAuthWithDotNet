@@ -9,6 +9,7 @@ namespace TokenBasedAuthWithDotNet.Controllers;
 public class NameController : ControllerBase
 {
     [HttpGet("GetNames")]
+    [Authorize]
     public IActionResult GetNames()
     {
         return Ok(new List<string> { "Adam", "Robert" });

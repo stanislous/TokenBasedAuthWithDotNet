@@ -6,5 +6,6 @@ public static class Data
     {
         {"Shehan", "qazwsx"},
         {"Vanderputt", "qazwsx"},
+        {"hir@systemate.com", "hiran1234"}
     };
 }
